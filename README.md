@@ -22,7 +22,7 @@ Solutions to problems on [hackerrank](https://www.hackerrank.com/)
 | #    | Title                                    | Solution            |
 | ---- | ---------------------------------------- | ------------------- |
 | 7    | [hiho_Week_1](https://hihocoder.com/contest/hiho1/problem/1) | [hiho_Week_1](hiho_Week_1) |
-| 8    | [hiho_Week_48](https://hihocoder.com/contest/hiho1/problem/48) | [hiho_Week_1](hiho_Week_1) |
-| 9    | [hiho_Week_133](https://hihocoder.com/contest/hiho1/problem/133) | [hiho_Week_133](hiho_Week_133) |
+| 8    | [hiho_Week_48](https://hihocoder.com/contest/hiho1/problem/48) | [hiho_Week_1](hiho_week_48) |
+| 9    | [hiho_Week_133](https://hihocoder.com/contest/hiho1/problem/133) | [hiho_Week_133](hiho_week_133) |
 
 
