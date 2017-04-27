@@ -4,7 +4,7 @@
 
 using namespace std;
 
-const int INFINITE = INT_MAX;
+const int INFINITE = 2147483647;
 int N;	//the amount of goods
 int weight[MAX_N];	//the weight of each good
 struct SegTreeNode {
@@ -16,14 +16,14 @@ struct SegTreeNode {
 构建区间树，最小值
 [L,R] Array的区间
 */
-void build(int root, int* Array, int L, int R){	
-	if (L == R) {	//递归结束
-		seg_tree[root].val = Array[L];
+void build(int root, int* Array, int l, int r){	
+	if (l == r) {	//递归结束
+		seg_tree[root].val = Array[l];
 		return;
 	}
-	int mid = (L + R) / 2;	//后序遍历
-	build(root * 2 + 1, Array, L, mid);
-	build(root * 2 + 2, Array, mid + 1, R);
+	int mid = (l + r) / 2;	//后序遍历
+	build(root * 2 + 1, Array, l, mid);
+	build(root * 2 + 2, Array, mid + 1, r);
 	seg_tree[root].val = min(seg_tree[root * 2 + 1].val, seg_tree[root * 2 + 2].val);
 }
 
@@ -33,7 +33,7 @@ void build(int root, int* Array, int L, int R){
 '[L,R]: 当前节点所表示的区间
 '[x,y]: 此次查询的区间
 */
-int _query(int root, int l, int r, int L, int R) {
+int _query(int root, int l, int r, const int L, const int R) {
 	//查询区间和当前节点区间没有交集
 	if (r < L || R < l) {
 		return INFINITE;
@@ -45,7 +45,7 @@ int _query(int root, int l, int r, int L, int R) {
 	return min(_query(root * 2 + 1, l, mid, L, R), _query(root * 2 + 2, mid + 1, r, L, R)); // 此处[mid+1, r]会出现 mid+1 > r 的情况，需要对于这种情况进行截止
 }
 
-int query(int L, int R) {
+int query(const int L, const int R) {
 	return _query(0, 0, N-1, L, R);
 }
 
